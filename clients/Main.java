@@ -1,5 +1,6 @@
 package clients;
 
+import clients.login.loginView;
 import clients.backDoor.BackDoorController;
 import clients.backDoor.BackDoorModel;
 import clients.backDoor.BackDoorView;
@@ -31,6 +32,7 @@ class Main
   public static void main (String args[])
   {
     new Main().begin();
+    loginView.main(args);
   }
 
   /**
