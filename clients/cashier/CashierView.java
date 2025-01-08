@@ -16,6 +16,7 @@ import java.util.Observer;
  */
 public class CashierView implements Observer
 {
+	
   private static final int H = 300;       // Height of window pixels
   private static final int W = 400;       // Width  of window pixels
   
@@ -59,11 +60,12 @@ public class CashierView implements Observer
     cp.setLayout(null);                             // No layout manager
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
+    cp.setBackground(Color.gray);
 
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
 
-    pageTitle.setBounds( 110, 0 , 270, 20 );       
-    pageTitle.setText( "Thank You for Shopping at MiniStrore" );                        
+    pageTitle.setBounds( 130, 10 , 270, 20 );       
+    pageTitle.setText( "Thank You for Shopping at MiniStore" );                        
     cp.add( pageTitle );  
     
     theBtCheck.setBounds( 16, 25+60*0, 80, 40 );    // Check Button
@@ -81,7 +83,7 @@ public class CashierView implements Observer
       e -> cont.doBought() );
     cp.add( theBtBought );                          //  Add to canvas
 
-    theAction.setBounds( 110, 25 , 270, 20 );       // Message area
+    theAction.setBounds( 210, 25 , 270, 20 );       // Message area
     theAction.setText( "" );                        // Blank
     cp.add( theAction );                            //  Add to canvas
 

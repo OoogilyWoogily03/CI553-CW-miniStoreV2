@@ -52,10 +52,11 @@ public class PackingView implements Observer
     cp.setLayout(null);                             // No layout manager
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
+    cp.setBackground(Color.gray);
     
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
     
-    pageTitle.setBounds( 110, 0 , 270, 20 );       
+    pageTitle.setBounds( 170, 10 , 270, 20 );       
     pageTitle.setText( "Packing Bought Order" );                        
     cp.add( pageTitle );
 
