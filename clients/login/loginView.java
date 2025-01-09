@@ -26,12 +26,7 @@ public class loginView {
         String password = textBox2.getText();
         
         if ("Username".equals(username) && "Password".equals(password)) {
-        JOptionPane.showMessageDialog(
-        frame,
-        "Login successful!",
-        "Success",
-        JOptionPane.INFORMATION_MESSAGE
-        );
+        JOptionPane.showMessageDialog(frame,"Login successful!","Success",JOptionPane.INFORMATION_MESSAGE);
         frame.dispose();
         } else {
         JOptionPane.showMessageDialog(
