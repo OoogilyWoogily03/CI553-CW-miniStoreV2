@@ -61,10 +61,30 @@ public class CashierView implements Observer
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
     cp.setBackground(Color.gray);
-
+    
+  //This bit is the button that toggles the colour
+    ImageIcon buttonpicture1 = new ImageIcon("images/LightbulbImage.png");
+    Image buttonpicture2 = buttonpicture1.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+    ImageIcon buttonpicscaled = new ImageIcon(buttonpicture2);
+    JButton darkModeButton = new JButton(buttonpicscaled);
+    darkModeButton.setBounds(330, 10, 40, 40);
+    darkModeButton.addActionListener(e -> {
+    	Color currentColor = cp.getBackground();
+        if (currentColor.equals(Color.GRAY)) {
+            cp.setBackground(Color.CYAN);
+        } else {
+            cp.setBackground(Color.GRAY);
+        }
+    });
+    cp.add(darkModeButton);
+    
+    
+    
+    
+    
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
 
-    pageTitle.setBounds( 130, 10 , 270, 20 );       
+    pageTitle.setBounds( 100, 10 , 270, 20 );       
     pageTitle.setText( "Thank You for Shopping at MiniStore" );                        
     cp.add( pageTitle );  
     
@@ -83,7 +103,7 @@ public class CashierView implements Observer
       e -> cont.doBought() );
     cp.add( theBtBought );                          //  Add to canvas
 
-    theAction.setBounds( 210, 25 , 270, 20 );       // Message area
+    theAction.setBounds( 180, 25 , 270, 20 );       // Message area
     theAction.setText( "" );                        // Blank
     cp.add( theAction );                            //  Add to canvas
 

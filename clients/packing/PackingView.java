@@ -54,6 +54,28 @@ public class PackingView implements Observer
     rootWindow.setLocation( x, y );
     cp.setBackground(Color.gray);
     
+    
+  //This bit is the button that toggles the colour
+    ImageIcon buttonpicture1 = new ImageIcon("images/LightbulbImage.png");
+    Image buttonpicture2 = buttonpicture1.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+    ImageIcon buttonpicscaled = new ImageIcon(buttonpicture2);
+    JButton darkModeButton = new JButton(buttonpicscaled);
+    darkModeButton.setBounds(330, 10, 40, 40);
+    darkModeButton.addActionListener(e -> {
+    	Color currentColor = cp.getBackground();
+        if (currentColor.equals(Color.GRAY)) {
+            cp.setBackground(Color.CYAN);
+        } else {
+            cp.setBackground(Color.GRAY);
+        }
+    });
+    cp.add(darkModeButton);
+    
+    
+    
+    
+    
+    
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
     
     pageTitle.setBounds( 170, 10 , 270, 20 );       
